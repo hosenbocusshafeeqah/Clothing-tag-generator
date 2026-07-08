@@ -1,5 +1,8 @@
 from PIL import Image, ImageDraw, ImageFont
 from qr_generator import generate_qr
+import os
+
+FONT_DIR =  "fonts"
 
 def create_layout(qr_path, code, price, name, size=None, bulk_qty=None, bulk_price=None):
     price = str(price)
@@ -10,13 +13,13 @@ def create_layout(qr_path, code, price, name, size=None, bulk_qty=None, bulk_pri
 
     draw = ImageDraw.Draw(tag)
 
-    font1 = ImageFont.truetype(r"C:\USERS\HP\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\CLARENDONBTPRO-BLACK.TTF", 190)
+    font1 = ImageFont.truetype(os.path.join(FONT_DIR, "CLARENDONBTPRO-BLACK.TTF"), 190)
     font2 = ImageFont.truetype(r"C:\Windows\Fonts\arialbd.ttf", 35)
     font3 = ImageFont.truetype(r"C:\Windows\Fonts\forte.TTF", 75)
     font4 = ImageFont.truetype("arial.ttf", 24)
     font5 = ImageFont.truetype(r"C:\Windows\Fonts\arialbd.ttf", 80)
-    font6 = ImageFont.truetype(r"C:\USERS\HP\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\CLARENDONBTPRO-BLACK.TTF", 65)
-    font7 = ImageFont.truetype(r"C:\USERS\HP\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\CLARENDONBTPRO-BOLD.TTF", 55)
+    font6 = ImageFont.truetype(os.path.join(FONT_DIR, "CLARENDONBTPRO-BLACK.TTF"), 65)
+    font7 = ImageFont.truetype(os.path.join(FONT_DIR, "CLARENDONBTPRO-BOLD.TTF"), 55)
     font8 = ImageFont.truetype(r"C:\Windows\Fonts\arialbd.ttf", 50)
     font9 = ImageFont.truetype(r"C:\Windows\Fonts\impact.ttf", 60)
 
