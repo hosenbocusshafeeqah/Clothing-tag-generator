@@ -1,56 +1,51 @@
-**QR Code Tag generator
+QR Code Tag generator
 
-This is a Python app which takes in a code as input and generates a qr code then makes a tag which is then printed onto a 6x6 sheet.
-It stores product hsitory using SQLite and allows users to go through past generated codes and even reprint it.
+a desktop application built entirely with Python and it generates qr codes which is used to make tags and sheets and then printed. A preview is provided before the user prints it. you can also check the history of generated tags.
 
---------------
-
-**Features:
+Features:
 -Generates QR codes for products
 -Creates printable price tags
+-Tag preview before printing
+-directly prints from the app
 -Generates A4 sheet with multiple tags
 -Stores product history using SQLite
 -Reprint previous tags from history
 -Optional size support for clothing items
 -Input Validation and error handling
+-deletes history older than 7 days
+-Input validation to prevent errors
 
---------------
-
-**Tech Stack:
+Tech Stack:
 -Python
 -SQLite
 -Pillow (PIL)
 -qrcode
+Tkinter
 
---------------
+main.py - Main gui and application logic
+database.py - SQLite database functions
+layout.py - Tag layout generation
+qr_generator.py - qr code generation
 
-**How to run:
+How to run:
 1. copy this repository: git clone https://github.com/yourusername/clothes-tag-generator.git
-2. Install: pip install pillow qr code
+2. Install: pip install pillow qrcode
 3. run the program: python main.py
-<img width="132" height="71" alt="Screenshot 2026-06-20 234336" src="https://github.com/user-attachments/assets/379cff0b-0f93-409b-be5f-d92e34079719" />
+<img width="362" height="377" alt="image" src="https://github.com/user-attachments/assets/492e8b72-03c5-4def-82cf-ae2d3561f0b8" />
 
-With size input:
-<img width="206" height="143" alt="image" src="https://github.com/user-attachments/assets/d8a3f91e-171f-4976-af06-55aacfa04bf2" />
 
-Tag (with size):
-<img width="208" height="297" alt="image" src="https://github.com/user-attachments/assets/faac3f2b-c4a9-4216-b91d-1fa8501d40c2" />
+<img width="362" height="380" alt="image" src="https://github.com/user-attachments/assets/4463612f-19ff-48d6-a047-7dd8f5c591ba" />
 
-Sheet (with size):
-<img width="212" height="287" alt="image" src="https://github.com/user-attachments/assets/f91922c7-b8df-4dc5-a06f-34978884b21c" />
 
-Tag (without size): 
-<img width="183" height="260" alt="image" src="https://github.com/user-attachments/assets/3eb609e3-73e5-4dbc-8ace-a0bae2107f75" />
+<img width="365" height="380" alt="image" src="https://github.com/user-attachments/assets/a410f3ff-7d08-442c-87ed-41be78a903f5" />
 
-Reprint feature: 
-<img width="150" height="144" alt="image" src="https://github.com/user-attachments/assets/01540868-4243-4565-afa1-da0da8726fea" />
 
-Result: 
-<img width="208" height="297" alt="image" src="https://github.com/user-attachments/assets/faac3f2b-c4a9-4216-b91d-1fa8501d40c2" />
+<img width="341" height="479" alt="image" src="https://github.com/user-attachments/assets/da7f2fa0-57eb-43c2-bfa4-142e0bcd518f" />
+
 
 --------------
 
-**Note (Product code structure) - Business rule:
+Note (Product code structure) - Business rule:
 This project follows a fixed product coding system defined by the store owner,
 meaning that all product codes begin with the prefix: 106474
 
@@ -60,7 +55,7 @@ The last 3 digits represent the product price
 
 --------------
 
-**EXAMPLE:
+EXAMPLE:
 A product code such as: 10647480900
 Can be interpreted as:
 "80" being the product number (sequence in inventory)
@@ -75,4 +70,10 @@ Since the first 6 digits are already known by the system only the remaining digi
 
 --------------
 
-**This project is functional and will be further improved with a graphical user interface (Tkinter).
+Future improvements:
+-Amount of tags generated on a sheet can be adjusted.
+-Amount of size needed on one sheet can be adjusted.
+-Configurable printer setting.
+-Better aesthetics and more user friendly.
+
+developped by Hosenbocus Shafeeqah
